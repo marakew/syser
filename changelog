@@ -1,0 +1,66 @@
+bugs can be present but seems it is work!
+
+1607 210517
+- add handle int 3
+- fix mouse scroll
+- fix memory leak PEFile read import
+
+0413 230517
+- fix crash on delete watch item
+- improve terminate debug
+- add FlushInstructionCache on WriteMemory
+- start debug from cmdline
+
+2046 230517
+- improve reset(reload the input file) (WO hotkey)
+
+1528 240517
+- hide BP(CCh) bytes from HexView, show original value
+- colored BP(code,data) in HexView
+- done re PopupMenu on HexView (hotkey not tested), operation toolbar in TODO
+- done re command(edit,move,compare) memory
+
+0203 250517
+- done re ModuleList window
+- done re ascii/unicode string context ref
+- fix env path by add manifest
+
+2224 250517
+- fix crash without dbg plugin
+- first build x64
+
+1813 280517
+- fix mouse wheel scroll on x64
+- fix scroll by UPbtn bar
+- add ALT+ hotkey
+- fix fit hexview on x64
+- fix hexview change addr on edit addr area
+- fix align stackview on x64
+- fix str sym ref on \t
+- add resolve ctx ref on r8-r15 CPU reg x64
+- improve PE loader for x64, for resolve import/export sym
+- fix select bytes on hexview for x64
+- add show EB line jmp ref
+- chg addr/offs represent on codeview
+
+0731 290517
+- fix PE Loader for x64, to read import/export for hibase > 32bit, as example kernelbase.dll
+- done re sym command, allow show/add symbol/use it for set breakpoint
+- fix readpe onload file, for correct read sizeof file for x64
+- fix search module range and module info status for x64
+
+1258 040617
+- fix disable load x86 on syser x64
+- fix fmt fit addr exception violation on syser x64
+- fix PID/TID status and expr var
+- fix fit addr tab in code/data view for x64
+- fix 'p ret' cmd, run to return
+- implement SDK menu api
+- done re process list window (attach work, detach from target at todo)
+- starting re peexplorer window
+
+1559 040617
+- fix load SyserColor.cfg from old SyserOption.exe util
+
+2058 040617
+- improve highlight keyword
