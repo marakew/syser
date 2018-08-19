@@ -1,0 +1,4 @@
+1607 210517
+- add handle int 3
+- fix mouse scroll
+- fix memory leak PEFile read import
