@@ -2,8 +2,8 @@
 reverse engineering old syser win32 debugger into beautiful C++ code<br>
 improve handle x64 arch<br>
 
-<img width="70%" src="https://raw.githubusercontent.com/marakew/syser/master/images/SyserDebuggerx32.png">
-<img width="70%" src="https://raw.githubusercontent.com/marakew/syser/master/images/SyserDebuggerx64.png">
+<img width="100%" src="https://raw.githubusercontent.com/marakew/syser/master/images/SyserDebuggerx32.png">
+<img width="100%" src="https://raw.githubusercontent.com/marakew/syser/master/images/SyserDebuggerx64.png">
 
 ## links
 https://exelab.ru/f/index.php?action=vthread&forum=3&topic=24745 release<br>
