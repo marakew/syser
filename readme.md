@@ -2,6 +2,9 @@
 reverse engineering old syser win32 debugger into beautiful C++ code<br>
 improve handle x64 arch<br>
 
+the source code did lost by corrupt flash drive<br>
+if you are wish to sponsor reverse engineering again, contact to me by email at debugger "About"<br>
+
 <img width="100%" src="https://raw.githubusercontent.com/marakew/syser/master/images/SyserDebuggerx32.png">
 <img width="100%" src="https://raw.githubusercontent.com/marakew/syser/master/images/SyserDebuggerx64.png">
 
