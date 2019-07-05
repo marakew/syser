@@ -56,3 +56,6 @@
 - implement SDK menu api
 - done re process list window (attach work, detach from target at todo)
 - starting re peexplorer window
+
+1559 040617
+- fix load SyserColor.cfg from old SyserOption.exe util
