@@ -17,3 +17,12 @@
 - colored BP(code,data) in HexView
 - done re PopupMenu on HexView (hotkey not tested), operation toolbar in TODO
 - done re command(edit,move,compare) memory
+
+0203 250517
+- done re ModuleList window
+- done re ascii/unicode string context ref
+- fix env path by add manifest
+
+2224 250517
+- fix crash without dbg plugin
+- first build x64
