@@ -1,22 +1,43 @@
 
 	#include "plugin.hpp"
 
+	static void *hMenu = 0;
+
+	void OnMenuAction()
+	{
+		gpSyserPluginUI->Outputf(WSTR("Menu Action!\n"));
+	}
+
 	void OnDebuggerOpen()
 	{
-        	//Syser Loaded Notify
+		hMenu = gpSyserPluginUI->InsertMenu(0, WSTR("SPCommand"), OnMenuAction);
 	        //::DbgPrint("SPCommand : OnDebuggerOpen\n");
 	}
 
 	void OnDebuggerClose()
 	{
-	        //Syser Unload Notify
+		gpSyserPluginUI->RemoveMenu(hMenu);
 	        //::DbgPrint("SPCommand : OnDebuggerClose\n");
 	}
 
 	void OnDebuggerPlunge()
 	{
-	        //Syser
 	        //::DbgPrint("SPCommand : OnDebuggerPlunge\n");
+
+		//avail all CPU context, see README
+
+	        ULONG_PTR Value;
+
+       	        if(gpSyserPluginUI->CalcExp(L"PID", &Value))
+		{
+       	                gpSyserPluginUI->Outputf(WSTR("PID = %08x\n"), (unsigned long)Value);
+                }
+
+       	        if(gpSyserPluginUI->CalcExp(L"TID", &Value))
+		{
+       	                gpSyserPluginUI->Outputf(WSTR("TID = %08x\n"), (unsigned long)Value);
+                }
+
 	}
 
 	SYSER_PLUGIN_MODULE PluginModule =

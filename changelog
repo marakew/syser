@@ -46,3 +46,13 @@
 - done re sym command, allow show/add symbol/use it for set breakpoint
 - fix readpe onload file, for correct read sizeof file for x64
 - fix search module range and module info status for x64
+
+1258 040617
+- fix disable load x86 on syser x64
+- fix fmt fit addr exception violation on syser x64
+- fix PID/TID status and expr var
+- fix fit addr tab in code/data view for x64
+- fix 'p ret' cmd, run to return
+- implement SDK menu api
+- done re process list window (attach work, detach from target at todo)
+- starting re peexplorer window
