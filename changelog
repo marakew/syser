@@ -26,3 +26,17 @@
 2224 250517
 - fix crash without dbg plugin
 - first build x64
+
+1813 280517
+- fix mouse wheel scroll on x64
+- fix scroll by UPbtn bar
+- add ALT+ hotkey
+- fix fit hexview on x64
+- fix hexview change addr on edit addr area
+- fix align stackview on x64
+- fix str sym ref on \t
+- add resolve ctx ref on r8-r15 CPU reg x64
+- improve PE loader for x64, for resolve import/export sym
+- fix select bytes on hexview for x64
+- add show EB line jmp ref
+- chg addr/offs represent on codeview

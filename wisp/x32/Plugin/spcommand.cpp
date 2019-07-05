@@ -29,12 +29,12 @@
 
 	int syser_calc(int argc, const wchar_t *argv[], const wchar_t *szCommandLine, void *pUserData)
 	{
-	        DWORD dwValue;
-	        if(argc>=2)
+	        ULONG_PTR Value;
+	        if(argc >= 2)
 	        {
-        	        if(gpSyserPluginUI->CalcExp(argv[1], &dwValue))
+        	        if(gpSyserPluginUI->CalcExp(argv[1], &Value))
 	                {
-        	                gpSyserPluginUI->Outputf(WSTR("%s = %08x\n"), argv[1], dwValue);
+        	                gpSyserPluginUI->Outputf(WSTR("%s = %08x\n"), argv[1], Value);
 	                }
         	}
 	        gpSyserPluginUI->Outputf(WSTR("hello world!\n"));

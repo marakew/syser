@@ -30,7 +30,7 @@
 	int syser_calc(int argc, const wchar_t *argv[], const wchar_t *szCommandLine, void *pUserData)
 	{
 	        ULONG_PTR Value;
-	        if(argc>=2)
+	        if(argc >= 2)
 	        {
         	        if(gpSyserPluginUI->CalcExp(argv[1], &Value))
 	                {

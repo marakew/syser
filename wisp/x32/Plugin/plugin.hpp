@@ -22,8 +22,8 @@
 	{
 		virtual bool RegisterPluginModule(const wchar_t *ModuleName, SYSER_PLUGIN_MODULE *pPluginModule);
 		virtual bool UnregisterPluginModule(const wchar_t *ModuleName);
-		virtual int GetInstrLen(unsigned long Address);
-		virtual bool CalcExp(const wchar_t *szExp, unsigned long *pResult);
+		virtual int GetInstrLen(ULONG_PTR Address);
+		virtual bool CalcExp(const wchar_t *szExp, ULONG_PTR *pResult);
 		virtual bool InsertCmd(const wchar_t *szCmd, FPCmd pCmdProc, void *pUserData, const wchar_t *pComment, const wchar_t *pUsage);
 		virtual void RemoveCmd(const wchar_t *szCmd);
 		virtual int RunCmd(const wchar_t *szCmd);
@@ -35,8 +35,8 @@
 		virtual void *GetMainTabWnd();
 		virtual void *GetMainMenu();
 		virtual void *GetWisp();
-		virtual unsigned long WriteMemory(unsigned long Address, void *Buffer, unsigned long Size);
-		virtual unsigned long ReadMemory(unsigned long Address, void *Buffer, unsigned long Size);
+		virtual unsigned long WriteMemory(ULONG_PTR Address, void *Buffer, unsigned long Size);
+		virtual unsigned long ReadMemory(ULONG_PTR Address, void *Buffer, unsigned long Size);
 	};
 
 	extern "C" __declspec(dllimport) CSyserUI *gpSyserPluginUI;
