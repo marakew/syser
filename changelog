@@ -8,3 +8,6 @@
 - improve terminate debug
 - add FlushInstructionCache on WriteMemory
 - start debug from cmdline
+
+2046 230517
+- improve reset(reload the input file) (WO hotkey)
