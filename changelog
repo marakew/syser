@@ -11,3 +11,9 @@
 
 2046 230517
 - improve reset(reload the input file) (WO hotkey)
+
+1528 240517
+- hide BP(CCh) bytes from HexView, show original value
+- colored BP(code,data) in HexView
+- done re PopupMenu on HexView (hotkey not tested), operation toolbar in TODO
+- done re command(edit,move,compare) memory
