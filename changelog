@@ -59,3 +59,6 @@
 
 1559 040617
 - fix load SyserColor.cfg from old SyserOption.exe util
+
+2058 040617
+- improve highlight keyword
