@@ -40,3 +40,9 @@
 - fix select bytes on hexview for x64
 - add show EB line jmp ref
 - chg addr/offs represent on codeview
+
+0731 290517
+- fix PE Loader for x64, to read import/export for hibase > 32bit, as example kernelbase.dll
+- done re sym command, allow show/add symbol/use it for set breakpoint
+- fix readpe onload file, for correct read sizeof file for x64
+- fix search module range and module info status for x64

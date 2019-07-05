@@ -13,28 +13,37 @@
 	struct SYSER_PLUGIN_MODULE
 	{
 		wchar_t PluginInfo[32];
-		PVFV fpOnDebuggerOpen;
-		PVFV fpOnDebuggerClose;
-		PVFV fpOnDebuggerPlunge;
+		PVFV fpOnDebuggerOpen;	//On Start Debug, Opened FileName and Created Debug Event
+		PVFV fpOnDebuggerClose; //On Stop Debug
+		PVFV fpOnDebuggerPlunge; //On Exception while debug
 	};
 
 	struct CSyserUI
 	{
 		virtual bool RegisterPluginModule(const wchar_t *ModuleName, SYSER_PLUGIN_MODULE *pPluginModule);
 		virtual bool UnregisterPluginModule(const wchar_t *ModuleName);
+
 		virtual int GetInstrLen(ULONG_PTR Address);
+
 		virtual bool CalcExp(const wchar_t *szExp, ULONG_PTR *pResult);
+
 		virtual bool InsertCmd(const wchar_t *szCmd, FPCmd pCmdProc, void *pUserData, const wchar_t *pComment, const wchar_t *pUsage);
 		virtual void RemoveCmd(const wchar_t *szCmd);
 		virtual int RunCmd(const wchar_t *szCmd);
+
 		virtual void Outputf(const wchar_t *szMsg, ...);
 		virtual void Output(const unsigned long *szMsg);
+
+		//MENU under TODO
 		virtual void *InsertMenu(void *hParentMenu, const wchar_t *szMenuName, void *fpMenuProc);
 		virtual bool RemoveMenu(void *hMenu);
 		virtual bool EnableMenu(void *hMenu, bool bEnable);
+
+		//for future use, pointer to window class
 		virtual void *GetMainTabWnd();
 		virtual void *GetMainMenu();
 		virtual void *GetWisp();
+
 		virtual unsigned long WriteMemory(ULONG_PTR Address, void *Buffer, unsigned long Size);
 		virtual unsigned long ReadMemory(ULONG_PTR Address, void *Buffer, unsigned long Size);
 	};
