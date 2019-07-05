@@ -2,3 +2,9 @@
 - add handle int 3
 - fix mouse scroll
 - fix memory leak PEFile read import
+
+0413 230517
+- fix crash on delete watch item
+- improve terminate debug
+- add FlushInstructionCache on WriteMemory
+- start debug from cmdline
