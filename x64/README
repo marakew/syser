@@ -1,0 +1,24 @@
+
+avail name for expcalc and any expr in syser
+
+under x64:
+RAX RBX RCX RDX RBP RSP RSI RDI RIP R8 R9 R10 R11 R12 R13 R14 R15
+EAX EBX ECX EDX EBP ESP ESI EDI EIP R8D R9D R10D R11D R12D R13D R14D R15D EFLAG EFL
+AX BX CX DX BP SP SI DI IP R8W R9W R10W R11W R12W R13W R14W R15W
+AH BH CH DH AL BL CL DL BPL SPL SIL DIL R8B R9B R10B R11B R12B R13B R14B R15B
+
+under x86:
+EAX EBX ECX EDX EBP ESP ESI EDI EIP EFLAG EFL
+AX BX CX DX BP SP SI DI IP
+AH BH CH DH AL BL CL DL
+
+for both x64,x86:
+
+seg through ":", as example ":ds"
+ES CS SS DS FS GS
+
+PID - process id
+TID - thread id
+
+BPCOUNT - hit count to BreakPoint, if BreakPoint with condition
+OPCODE OPCODE1 OPCODE2 OPCODE4 - bytes on BreakPoint, if BreakPoint with condition
