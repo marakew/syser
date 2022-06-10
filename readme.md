@@ -5,7 +5,7 @@ improved handle x64 arch and fix some bugs<br>
 struct viewer<br>
 convert any .pdb or .exe by util pdb2sds.exe<br>
 load .sds file from syser menu<br>
-Menu "File"-">Load Symbol File"<br>
+Menu "File"->"Load Symbol File"<br>
 check from console by command<br>
 >sdsmod<br>
 File BP(s) Size(k) CheckSum TimeStamp ModuleName<br>
