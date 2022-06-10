@@ -2,21 +2,21 @@
 reverse engineering old syser win32 debugger<br>
 improved handle x64 arch and fix some bugs<br>
 
-struct viewer
-convert any .pdb or .exe by util pdb2sds.exe
-load .sds file from syser menu
-Menu "File"-">Load Symbol File"
-check from console by command
->sdsmod
-File BP(s) Size(k) CheckSum TimeStamp ModuleName
-0          0k 00000001 00000001  testx64.pdb
-1 Module(s)
+struct viewer<br>
+convert any .pdb or .exe by util pdb2sds.exe<br>
+load .sds file from syser menu<br>
+Menu "File"-">Load Symbol File"<br>
+check from console by command<br>
+>sdsmod<br>
+File BP(s) Size(k) CheckSum TimeStamp ModuleName<br>
+0          0k 00000001 00000001  testx64.pdb<br>
+1 Module(s)<br>
 
-start debug .exe
-open popup menu on data window by right mouse button
-choose "Attach type to Addr"
-choose "Lock Type"
-enter at "Address" address of struct
+start debug .exe<br>
+open popup menu on data window by right mouse button<br>
+choose "Attach type to Addr"<br>
+choose "Lock Type"<br>
+enter at "Address" address of struct<br>
 
 [screenshot of sources](screenshot/readme.md)<br>
 
