@@ -3,6 +3,7 @@ reverse engineering old syser win32 debugger<br>
 improved handle x64 arch and fix some bugs<br>
 
 struct viewer<br>
+note: pdb2sds.exe .pdb .sds must be same arch!<br>
 convert any .pdb or .exe by util pdb2sds.exe<br>
 load .sds file from syser menu<br>
 Menu "File"->"Load Symbol File"<br>
