@@ -1,0 +1,1 @@
+..\cmake.bat --build . -v > cbuild.log 2>&1

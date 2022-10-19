@@ -25,11 +25,7 @@ choose "Attach type to Addr"<br>
 choose "Lock Type"<br>
 enter at "Address" address of struct<br>
 
-[screenshot of sources](screenshot/readme.md)<br>
-
-[list of sources](list_of_sources)<br>
-
-to buy sources or make it opensource contact to email from syser about<br>
+[sources](source)<br>
 
 <img width="100%" src="https://raw.githubusercontent.com/marakew/syser/master/images/struct_viewer.png">
 <img width="100%" src="https://raw.githubusercontent.com/marakew/syser/master/images/attach_struct.png">
