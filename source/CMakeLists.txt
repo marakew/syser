@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.22)
 
-#set(CMAKE_TOOLCHAIN_FILE L:/git_my/cmake/msvc-tools.cmake)
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/../cmake/msvc-tools.cmake)
 
 project(syser CXX C ASM_MASM RC)
-#include(L:/git_my/cmake/msvc-showcmd.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/msvc-showcmd.cmake)
 
-# there are no move semantics
+# copy elision break intrusive containers
 set(CMAKE_CXX_STANDARD 98)
 
 set(ADDITION_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../addition")

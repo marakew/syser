@@ -27,6 +27,11 @@ enter at "Address" address of struct<br>
 
 [sources](source)<br>
 
+If you want to thank
+```
+    BTC 3HdQ9tLRoZ1uRGV6rfoDoUhF75DqzJa4UM
+```
+
 <img width="100%" src="https://raw.githubusercontent.com/marakew/syser/master/images/struct_viewer.png">
 <img width="100%" src="https://raw.githubusercontent.com/marakew/syser/master/images/attach_struct.png">
 <img width="100%" src="https://raw.githubusercontent.com/marakew/syser/master/images/SyserDebuggerx64src1.png">
