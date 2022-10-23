@@ -27,7 +27,7 @@ enter at "Address" address of struct<br>
 
 [sources](source)<br>
 
-If you want to thank
+If you want to thank me
 ```
     BTC 3HdQ9tLRoZ1uRGV6rfoDoUhF75DqzJa4UM
 ```
