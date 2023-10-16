@@ -1,6 +1,10 @@
 
+the original [syser debugger](https://github.com/yanfengwu-syser/syserdebugger) now is opensource<br>
+
 reverse engineering old syser win32 debugger<br>
 improved handle x64 arch and fix some bugs<br>
+my syser IDA reverse engineering [database idb](https://github.com/marakew/rep/tree/master/syser)<br>
+you able to see about my reverse engineering skills<br>
 
 struct viewer<br>
 note: pdb2sds.exe .pdb .sds must be same arch!<br>
