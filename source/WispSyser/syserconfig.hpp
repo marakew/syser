@@ -5,14 +5,7 @@
 #include "../Code/define.h"
 
 #pragma pack(push, 1)
-struct SYSER_CONFIG
-{
-	unsigned int iID;
-};
-#pragma pack(pop)
-
-#pragma pack(push, 1)
-struct SYSER_CFG //: public SYSER_CONFIG
+struct SYSER_CFG
 {
 	unsigned int iID;
 	unsigned int iSplitRight;
@@ -49,37 +42,6 @@ struct SYSER_CFG //: public SYSER_CONFIG
 extern SYSER_CFG gSyserConfig;
 extern SYSER_CFG gSyserDefConfig;
 
-enum CV_COLOR
-{
-  COLOR_NULL = 0,
-  COLOR_BG = 1,
-  COLOR_ADDRESS = 2,
-  COLOR_PREFIX = 3,
-  COLOR_OPCODE = 4,
-  COLOR_REGISTER = 5,
-  COLOR_SEG_REG = 6,
-  COLOR_IMMED = 7,
-  COLOR_OPTR = 8,
-  COLOR_SYMBOL = 9,
-  COLOR_COMMENT = 10,
-  COLOR_KEYWORD = 11,
-  COLOR_STRING = 12,
-  COLOR_BPX_STRIP = 13,
-  COLOR_EIP_STRIP = 14,
-  COLOR_BPX_EIP_STRIP = 15,
-  COLOR_API_NAME = 16,
-  COLOR_PARAM_TYPE = 17,
-  COLOR_PARAM_NAME = 18,
-  COLOR_JMP_LINE = 19,
-  COLOR_ACTIVE_JMP_LINE = 20,
-  COLOR_PREFIX_BYTE = 21,
-  COLOR_OPCODE_BYTE = 22,
-  COLOR_REGRM_BYTE = 23,
-  COLOR_SIB_BYTE = 24,
-  COLOR_OTHER_OPCODE_BYTE = 25,
-  COLOR_AMD3DNOW_BYTE = 26,
-  COLOR_MAX = 27,
-};
 #if 0
 enum SV_COLOR
 {
@@ -89,7 +51,7 @@ enum SV_COLOR
 };
 #endif
 #pragma pack(push, 1)
-struct SYSER_COLORS //: public SYSER_CONFIG
+struct SYSER_COLORS
 {
 	unsigned int iID;
 	unsigned long Color[51];

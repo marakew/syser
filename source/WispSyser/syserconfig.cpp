@@ -125,14 +125,14 @@ bool ReadConfig(const char *FileName, void *Buffer, unsigned long Size)
 		return false;
 	}
 
-	unsigned long CodeID = TGetCodeID((unsigned char*)Buffer + 4, Size - 4);
+	unsigned int CodeID = TGetCodeID((unsigned char*)Buffer + 4, Size - 4);
 	if (CodeID == 0)
 	{
 		File.Close();
 		return false;
 	}
 
-	if (CodeID != *(unsigned long*)Buffer)
+	if (CodeID != *(unsigned int*)Buffer)
 	{
 		File.Close();
 		return false;
@@ -163,14 +163,14 @@ bool ReadConfigSize(const char *FileName, void *Buffer, unsigned long Size, unsi
 		return false;
 	}
 
-	unsigned long CodeID = TGetCodeID((unsigned char*)Buffer + 4, Size - 4);
+	unsigned int CodeID = TGetCodeID((unsigned char*)Buffer + 4, Size - 4);
 	if (CodeID == 0)
 	{
 		File.Close();
 		return false;
 	}
 
-	if (CodeID != *(unsigned long*)Buffer)
+	if (CodeID != *(unsigned int*)Buffer)
 	{
 		File.Close();
 		return false;
@@ -187,8 +187,8 @@ bool WriteConfig(const char *FileName, void *Buffer, unsigned long Size)
 		return false;
 	}
 
-	unsigned long CodeID = TGetCodeID((unsigned char*)Buffer + 4, Size - 4);
-	*(unsigned long*)Buffer = CodeID;
+	unsigned int CodeID = TGetCodeID((unsigned char*)Buffer + 4, Size - 4);
+	*(unsigned int*)Buffer = CodeID;
 
 	if (!File.WriteFile(Buffer, Size))
 	{
