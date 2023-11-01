@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 	printf("Sig: Timestamp 0x%08x CheckSum 0x%08x\n", FileSig.TimeStamp, FileSig.CheckSum);
 	if (FileSig.TimeStamp == 0 && FileSig.CheckSum == 0)
 	{
-		printf("Sig - ERROR\n", FileSig.TimeStamp, FileSig.CheckSum);
+		printf("Sig - ERROR\n");
 		return 1;
 	}
 	return 0;
