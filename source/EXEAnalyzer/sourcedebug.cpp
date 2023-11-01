@@ -4029,6 +4029,16 @@ fflush(f);
 		return Size;
 	}
 
+	unsigned long CSourceDebug::WriteVTable(DIABASICTYPE *Type)
+	{
+		char *Name = Type->Elem.Name;
+		Type->Elem.Name = (char *)PackString(Type);
+		unsigned long Size = Type->Elem.Size - sizeof(DIASYMBOL);
+		gpFileIO->WriteFile(m_Handle, &Type->Elem, Size);
+		Type->Elem.Name = Name;
+		return Size;
+	}
+
 	unsigned long CSourceDebug::WriteThunk(DIABASICTYPE *Type)
 	{
 		char *Name = Type->Elem.Name;
@@ -4154,9 +4164,8 @@ fflush(f);
 			case ELEM_FRIEND:{
 				Size = WriteFriend(it->second);
 				} break;
-			case ELEM_FRIEND_PAIR:{
-				Size = WriteFriend(it->second);
-				Size = WriteFriend(it->second);
+			case ELEM_VTABLE:{
+				Size = WriteVTable(it->second);
 				} break;
 			case ELEM_THUNK:{
 				Size = WriteThunk(it->second);

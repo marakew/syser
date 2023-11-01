@@ -379,6 +379,7 @@ struct CSourceDebug
 	unsigned long WriteFunction(DIABASICTYPE *Type);
 	unsigned long WriteBaseClass(DIABASICTYPE *Type);
 	unsigned long WriteFriend(DIABASICTYPE *Type);
+	unsigned long WriteVTable(DIABASICTYPE *Type);
 	unsigned long WriteThunk(DIABASICTYPE *Type);
 	unsigned long WriteBlock(DIABASICTYPE *Type);
 
