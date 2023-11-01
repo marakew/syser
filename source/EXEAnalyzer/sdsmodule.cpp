@@ -459,7 +459,11 @@ fclose(f);
 		for (unsigned long n = 0; n < Len; ++n)
 		{
 			const char *pFileName = TStrRChr(SrcFileName[n].FileName, '\\');
-			if (!TStrICmp(pFileName, FileName)) return &SrcFileName[n];
+			if (pFileName)
+			{
+				++pFileName;
+				if (!TStrICmp(pFileName, FileName)) return &SrcFileName[n];
+			}
 		}
 		return nullptr;
 	}
