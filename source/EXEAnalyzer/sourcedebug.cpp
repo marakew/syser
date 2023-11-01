@@ -1815,7 +1815,7 @@ fflush(f);
 		if (udtKind == UdtClass)
 			diatype->Elem.Type = ELEM_CLASS;
 		else
-		if (udtKind == DataIsStaticLocal)
+		if (udtKind == UdtUnion)
 			diatype->Elem.Type = ELEM_UNION;
 
 		diatype->Elem.Length = length;
