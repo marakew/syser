@@ -835,7 +835,7 @@ bool ANormalize(char *InBuffer, unsigned long InLen, char *OutBuffer, unsigned l
 		static const T *strError = LITERAL(T, "<Error>");//[8];
 		int nLeadingZeros;
 		const T * sPrefix;
-		static const T *str0x = LITERAL(T, "0X");//[3];
+		static const T *str0x = LITERAL(T, "0x");//[3];
 
 	#define OutPut(x,y)	(if (x) *x++ = *y;)
 
@@ -982,7 +982,7 @@ bool ANormalize(char *InBuffer, unsigned long InLen, char *OutBuffer, unsigned l
 				goto EmitNumber; }}
 		#endif
 			case 'X':
-				if (bZeroPrefix) sPrefix = str0x;
+				if (bZeroPrefix) sPrefix = str0X;
 				if (bIsLonglong)
 				{
 					unsigned long long val64 = va_arg(Next, unsigned long long);
@@ -1037,7 +1037,7 @@ bool ANormalize(char *InBuffer, unsigned long InLen, char *OutBuffer, unsigned l
 				goto EmitNumber;
 			case 'p':
 			case 'x':
-				if (bZeroPrefix) sPrefix = str0X;
+				if (bZeroPrefix) sPrefix = str0x;
 				if (bIsLonglong)
 				{
 					unsigned long long val64 = va_arg(Next, unsigned long long);

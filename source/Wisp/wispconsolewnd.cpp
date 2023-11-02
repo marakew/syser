@@ -392,7 +392,7 @@
 				goto EmitNumber; }}
 		#endif
 			case 'X':
-				if (bZeroPrefix) sPrefix = str0x;
+				if (bZeroPrefix) sPrefix = str0X;
 				if (bIsLonglong)
 				{
 					val64 = va_arg(Next, __int64);
@@ -447,7 +447,7 @@
 				goto EmitNumber;
 			case 'p':
 			case 'x':
-				if (bZeroPrefix) sPrefix = str0X;
+				if (bZeroPrefix) sPrefix = str0x;
 				if (bIsLonglong)
 				{
 					unsigned long long val64 = va_arg(Next, unsigned long long);
