@@ -1366,7 +1366,7 @@ EmitNumber:
 			TStrCpyLimit((WCHAR*)Value, argv[2], Size);
 			break;
 		case SETOPTION_INT:
-			if (!USDecStrToNum(argv[2], (int*)Value))
+			if (!SDecStrToNum(argv[2], (int*)Value))
 			{
 				pTermWnd->Printf(WSTR("Error : Invalid value!\n"));
 				return 1;
