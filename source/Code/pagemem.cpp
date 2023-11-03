@@ -277,7 +277,7 @@
 		if (!m_PageDir[DirIndex])
 		{
 			m_PageDir[DirIndex] = new MEMORY_PAGE[1024];
-			memset(m_PageDir[DirIndex], 0, sizeof(MEMORY_PAGE));
+			memset(m_PageDir[DirIndex], 0, sizeof(MEMORY_PAGE)*1024);
 		}
 
 		MEMORY_PAGE *pPage = &m_PageDir[DirIndex][PageIndex];
