@@ -570,7 +570,7 @@
 
 	unsigned long CPageMemory::ReadString(unsigned long Address, unsigned long *Buffer, unsigned long Size)
 	{
-		unsigned short DWord;
+		unsigned long DWord;
 		unsigned int i;
 
 		for (i = 0; i < Size-1 && ReadMemD(Address+4*i, &DWord); ++i)
