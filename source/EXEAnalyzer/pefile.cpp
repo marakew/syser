@@ -792,6 +792,7 @@
 				delete []m_TLSCallBackFuncs;
 				m_TLSCallBackFuncs = 0;
 			}
+			return;
 		}
 		
 		ReadMemory(TLSDir.StartAddressOfRawData, m_TLSData, m_TLSDataSize);
@@ -824,7 +825,7 @@
 		for (ImageRelocBasePos = Address;
 			CImageFile::ReadFile(ImageRelocBasePos, &BaseReloc, sizeof(IMAGE_BASE_RELOC))
 			&& BaseReloc.BlockSize
-			&& BaseReloc.BlockSize > 8 && BaseReloc.BlockSize <= 0x1008;
+			&& BaseReloc.BlockSize > sizeof(IMAGE_BASE_RELOC) && BaseReloc.BlockSize <= 0x1000+sizeof(IMAGE_BASE_RELOC);
 			ImageRelocBasePos += BaseReloc.BlockSize )
 		{
 			++m_BaseRelocCount;
@@ -940,7 +941,7 @@
 			&& CImageFile::ReadString(
 				m_ImageBase + pImportDesc[ModuleCount].Name,
 				pImportModule->FileName,
-				0x40,
+				sizeof(pImportModule->FileName),
 				0x18) )
 		{
 			pImportModule->RVA = m_ImageBase + pImportDesc[ModuleCount].Name;
@@ -1008,7 +1009,7 @@
 						if (!CImageFile::ReadString(
 							pImportFunc->NameAddr + 2,
 							pImportFunc->FuncName,
-							0x40,
+							sizeof(pImportFunc->FuncName),
 							0x18) )
 						break;
 					}
@@ -1077,14 +1078,14 @@
 		for (n = 0; n < FuncSize; ++n)
 		{
 			unsigned long FuncName;
-			if (!ReadMemory(m_ImageBase + FuncNameAddrPos, &FuncName, 4))
+			if (!ReadMemory(m_ImageBase + FuncNameAddrPos, &FuncName, sizeof(FuncName)))
 				break;
 
 			unsigned short FuncOrd;
 			if (n < NameSize)
 			{
 				CImageFile::ReadString(m_ImageBase + FuncName, m_ExportFunc[n].FuncName,
-							0x40, 0x18);
+							sizeof(m_ExportFunc[n].FuncName), 0x18);
 
 				ReadMemory(m_ImageBase + FuncOrdPos + n*2, &FuncOrd, 2);
 			} else
@@ -1101,7 +1102,7 @@
 			} else
 			{
 				unsigned long FuncAddr;
-				if (!ReadMemory(m_ImageBase + FuncAddrPos + FuncOrd*4, &FuncAddr, 4))
+				if (!ReadMemory(m_ImageBase + FuncAddrPos + FuncOrd*4, &FuncAddr, sizeof(FuncAddr)))
 					break;
 
 				if (FuncAddr)
@@ -1197,7 +1198,7 @@
 			//	return;
 
 			RESOURCE_DIRECTORY_ENTRY DirEntry;
-			if (ReadMemory(ResourceAddress + 8 * ResPos + 0x10, &DirEntry, 8) != 8)
+			if (ReadMemory(ResourceAddress + sizeof(DirEntry) * ResPos + sizeof(ResourceDirectory), &DirEntry, sizeof(DirEntry)) != sizeof(DirEntry))
 				continue;
 
 			if (!(DirEntry.OffsetToData & 0x80000000))
@@ -1253,7 +1254,7 @@
 				//if (DataPos >= m_ResDir[ResPos].ResCount)
 				//	break;
 
-				if (ReadMemory(DataAddress + 8 * DataPos + 0x10, &DirEntry, 8) != 8)
+				if (ReadMemory(DataAddress + sizeof(DirEntry) * DataPos + sizeof(ResourceDirectory), &DirEntry, sizeof(DirEntry)) != sizeof(DirEntry))
 					continue;
 
 				if (!(DirEntry.OffsetToData & 0x80000000))
@@ -1287,7 +1288,7 @@
 				if (ResourceDirectory.NumberOfIdEntries != 1)
 					continue;
 
-				if (ReadMemory(MixAddress + 0x10, &DirEntry, 8) != 8)
+				if (ReadMemory(MixAddress + sizeof(ResourceDirectory), &DirEntry, sizeof(DirEntry)) != sizeof(DirEntry))
 					continue;
 
 				if ((DirEntry.OffsetToData & 0x80000000))
@@ -1425,7 +1426,7 @@
 		
 		for (i = 0; i < pDir->ResCount; ++i)
 		{
-			if ( (ID >> 4) + 1 == pDir->ResDataDir[i].ID)
+			if ( (ID/16) + 1 == pDir->ResDataDir[i].ID)
 			{
 				ResDataAddress = pDir->ResDataDir[i].BufferAddr;
 				ResDataSize = pDir->ResDataDir[i].Size;
