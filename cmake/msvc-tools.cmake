@@ -29,6 +29,8 @@ function(get_highest_version the_dir the_ver)
   endforeach()
 endfunction()
 
+set(NINJA_PATH "D:/Dev")
+
 set(CLANG_PATH "D:")
 set(CLANG_VER "15.0.3")
 
@@ -65,7 +67,12 @@ endif()
 
 if(DEFINED ENV{PLATFORM} AND $ENV{PLATFORM} STREQUAL "x32")
 
+if(CMAKE_GENERATOR MATCHES "Ninja")
+  set(CMAKE_MAKE_PROGRAM "${NINJA_PATH}/ninja.exe" CACHE FILEPATH "" FORCE)
+else()
   set(CMAKE_MAKE_PROGRAM "${VCPATH}/bin/Hostx64/x86/nmake.exe")
+endif()
+
 if(USE_CLANGCL)
   set(CMAKE_C_COMPILER "${CLANG_PATH}/LLVM-${CLANG_VER}-win32/bin/clang-cl.exe")
   set(CMAKE_CXX_COMPILER "${CLANG_PATH}/LLVM-${CLANG_VER}-win32/bin/clang-cl.exe")
@@ -81,7 +88,12 @@ endif()
 
 elseif(DEFINED ENV{PLATFORM} AND $ENV{PLATFORM} STREQUAL "x64")
 
+if(CMAKE_GENERATOR MATCHES "Ninja")
+  set(CMAKE_MAKE_PROGRAM "${NINJA_PATH}/ninja.exe" CACHE FILEPATH "" FORCE)
+else()
   set(CMAKE_MAKE_PROGRAM "${VCPATH}/bin/Hostx64/x64/nmake.exe")
+endif()
+
 if(USE_CLANGCL)
   set(CMAKE_C_COMPILER "${CLANG_PATH}/LLVM-${CLANG_VER}-win64/bin/clang-cl.exe")
   set(CMAKE_CXX_COMPILER "${CLANG_PATH}/LLVM-${CLANG_VER}-win64/bin/clang-cl.exe")
