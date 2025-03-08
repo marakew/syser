@@ -1202,7 +1202,7 @@ fclose(f);
 		return GetGlobal(Name, func, bFunc, offset);
 	}
 
-	BASICTYPE *CSDSModule::CSDSModule::GetGlobal(const char *Name, bool X)
+	BASICTYPE *CSDSModule::GetGlobal(const char *Name, bool X)
 	{
 		if (!Name) return nullptr;
 		if (!Name[0]) return nullptr;

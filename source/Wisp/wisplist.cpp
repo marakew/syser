@@ -1410,8 +1410,9 @@
 
 			if (Line != 0)
 			{
+				m_ClientDC.m_pClipRect = &MainRC;
 				MainRC.x += m_ClientDC.m_pRect->x;
-				MainRC.y = LineRC.y + m_ClientDC.m_pRect->y;
+				MainRC.y += m_ClientDC.m_pRect->y;
 				LineRC.x = Icol->RCDIB.x - m_CharMiddleWidth * m_pScrollBar[1]->CurPos;
 			} else
 			{
