@@ -672,7 +672,7 @@
 				break;}
 		case VK_RBUTTON:{
 				if (pMsg->m_LogicMousePosWnd.x > m_ClientRect.cx ||
-				    pMsg->m_LogicMousePosWnd.y > m_ClientRect.cy || pMsg->KeyEvent.bKeyDown)
+				    pMsg->m_LogicMousePosWnd.y > m_ClientRect.cy || !pMsg->KeyEvent.bKeyDown)
 					return true;
 
 				TListIter<CListStringItem> It;
